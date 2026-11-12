@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { apiUrl } from '../api';
 
 const initialData = { accounts: [], flow: null };
 const challengeLabels = {
@@ -10,7 +11,7 @@ const challengeLabels = {
 };
 
 async function request(path, options) {
-  const response = await fetch(path, {
+  const response = await fetch(apiUrl(path), {
     ...options,
     headers: {
       'Content-Type': 'application/json',

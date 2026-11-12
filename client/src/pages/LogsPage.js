@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { apiUrl } from '../api';
 
 const filters = [
   { value: 'all', label: 'Все события' },
@@ -8,7 +9,7 @@ const filters = [
 ];
 
 async function requestLogs() {
-  const response = await fetch('/api/telegram/logs?limit=500', {
+  const response = await fetch(apiUrl('/api/telegram/logs?limit=500'), {
     headers: { 'Content-Type': 'application/json' },
   });
   const result = await response.json();
