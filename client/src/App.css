@@ -1,0 +1,2702 @@
+.app-shell {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 5;
+  display: flex;
+  width: 268px;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 18px 20px 20px;
+  color: #a7afc0;
+  background: #292f40;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  margin: 0 -7px 25px;
+  padding: 8px 9px;
+  border: 1px solid rgba(115, 139, 192, .16);
+  border-radius: 13px;
+  color: #fff;
+  background: linear-gradient(125deg, rgba(47, 66, 108, .3), rgba(19, 25, 37, .22));
+  text-decoration: none;
+  transition: border-color .18s ease, background .18s ease, transform .18s ease;
+}
+
+.brand:hover {
+  border-color: rgba(130, 157, 224, .38);
+  background: linear-gradient(125deg, rgba(54, 76, 125, .38), rgba(22, 29, 43, .32));
+  transform: translateY(-1px);
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  place-items: center;
+  border: 1px solid rgba(150, 174, 237, .42);
+  border-radius: 12px;
+  color: #e7edff;
+  background: linear-gradient(145deg, #344b7d, #19243a 74%);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .13), 0 5px 13px rgba(0, 0, 0, .22);
+}
+
+.brand-mark span {
+  margin-top: -1px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.brand-mark i {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #0e1420;
+  border-radius: 50%;
+  background: #71d49b;
+  box-shadow: 0 0 8px rgba(113, 212, 155, .6);
+}
+
+.brand-copy {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.brand-name {
+  color: #e9edf6;
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -.35px;
+  line-height: 1.1;
+}
+
+.brand-name > span {
+  color: #91aaff;
+}
+
+.brand-caption {
+  color: #7e8ba3;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.35px;
+  white-space: nowrap;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 4px;
+}
+
+.sidebar-link {
+  display: flex;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  gap: 14px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: 7px;
+  color: #9da5b5;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: color .15s ease, background .15s ease;
+}
+
+.sidebar-link:hover:not(:disabled),
+.sidebar-link.is-active {
+  color: #fff;
+}
+
+.sidebar-link.is-active {
+  background: rgba(255, 255, 255, .055);
+}
+
+.sidebar-link:disabled {
+  cursor: default;
+}
+
+.sidebar-link.is-muted:hover {
+  color: #c3cada;
+}
+
+.module-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 22px 0 12px;
+  color: #dce1ea;
+  font-size: 13px;
+}
+
+.module-heading svg {
+  color: #8d96a8;
+}
+
+.module-nav {
+  gap: 3px;
+}
+
+.module-nav .sidebar-link {
+  min-height: 39px;
+}
+
+.sidebar-footer {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.sidebar-cta {
+  display: flex;
+  min-height: 39px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #3b5f9a;
+  border-radius: 8px;
+  color: #f1f3f8;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sidebar-cta:hover {
+  background: rgba(255, 255, 255, .06);
+}
+
+.main-content {
+  min-height: 100vh;
+  margin-left: 268px;
+  padding: 35px 36px 44px;
+}
+
+.accounts-page,
+.spam-page {
+  width: min(100%, 1500px);
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(130px, 1fr));
+  gap: 13px;
+  margin-bottom: 13px;
+}
+
+.stat-card {
+  display: flex;
+  min-height: 87px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 13px 16px;
+  border: 1px solid #edf0f4;
+  border-radius: 7px;
+  color: #555b61;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stat-card-active {
+  border: 2px solid #4d79d5;
+  padding: 12px 15px;
+  color: #4774cf;
+}
+
+.stat-card strong {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.stat-card span {
+  color: #858b92;
+  font-size: 12px;
+}
+
+.action-bar,
+.accounts-table-card,
+.panel {
+  border: 1px solid #edf0f4;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(32, 48, 73, .035);
+}
+
+.action-bar {
+  display: flex;
+  min-height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 13px;
+  padding: 10px 14px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 7px;
+}
+
+.icon-button {
+  display: inline-grid;
+  width: 38px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  color: #2e3338;
+  background: #f0f2f5;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+
+.icon-button:hover {
+  background: #e4e9f1;
+}
+
+.account-count {
+  color: #858b92;
+  font-size: 12px;
+}
+
+.accounts-table-card {
+  overflow: hidden;
+}
+
+.table-toolbar {
+  display: flex;
+  min-height: 63px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.filter-control {
+  position: relative;
+  display: flex;
+  height: 32px;
+  align-items: center;
+  gap: 3px;
+  padding: 0 10px;
+  border-radius: 8px;
+  color: #252a30;
+  background: #f0f2f5;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.filter-control select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.filter-control select:disabled {
+  cursor: default;
+}
+
+.filter-more {
+  width: 34px;
+  height: 32px;
+}
+
+.search-field {
+  display: flex;
+  width: min(270px, 32%);
+  min-width: 180px;
+  height: 35px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 11px;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  color: #777e86;
+}
+
+.search-field input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #343a40;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+}
+
+.search-field input::placeholder {
+  color: #a4a9af;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.accounts-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #4b5055;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.accounts-table th,
+.accounts-table td {
+  height: 43px;
+  padding: 0 9px;
+  border-bottom: 1px solid #e9ecef;
+  text-align: left;
+}
+
+.accounts-table th {
+  height: 42px;
+  color: #555a60;
+  background: #f0f2f5;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.accounts-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+.accounts-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.accounts-table .checkbox-cell {
+  width: 42px;
+  padding-left: 20px;
+}
+
+.accounts-table input[type='checkbox'] {
+  width: 14px;
+  height: 14px;
+  accent-color: #4c78d2;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.sort-hint {
+  margin-left: 6px;
+  color: #b7bbc1;
+}
+
+.row-number {
+  width: 39px;
+  color: #555b61;
+}
+
+.phone-cell,
+.country-cell {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.avatar {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+.avatar-sand { background: #d8c6a9; }
+.avatar-coral { background: #f07e79; }
+.avatar-blue { background: #67b4d2; }
+.avatar-purple { background: #c881de; }
+.avatar-lime { background: #a8d84f; }
+.avatar-orange { background: #f38161; }
+.avatar-cyan { background: #64c8dc; }
+.avatar-pink { background: #df72c7; }
+.avatar-green { background: #83d14f; }
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  color: #5da36b;
+  background: #e3f2e7;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.status-frozen {
+  color: #4590b6;
+  background: #dceff7;
+}
+
+.status-blocked {
+  color: #cb6d65;
+  background: #f8e5e3;
+}
+
+.name-cell {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.row-actions button {
+  display: inline-grid;
+  min-width: 15px;
+  height: 20px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  color: #6a7077;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.row-actions button:hover {
+  color: #4774cf;
+}
+
+.row-actions button:last-child {
+  color: #4774cf;
+}
+
+.empty-row {
+  height: 90px !important;
+  color: #89909a;
+  text-align: center !important;
+}
+
+.page-title {
+  margin: 0 0 21px;
+  color: #565c63;
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -.4px;
+}
+
+.title-book {
+  margin-left: 4px;
+  color: #4d7ed2;
+  font-size: 18px;
+  vertical-align: 3px;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 25px 20px;
+}
+
+.soft-button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  color: #282d32;
+  background: #eff2f5;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.soft-button:hover,
+.soft-button-selected {
+  background: #e6ebf2;
+}
+
+.tab-help {
+  display: inline-grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  border: 1px solid #7d858d;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.settings-panel {
+  min-height: 371px;
+  margin-bottom: 22px;
+  padding: 21px 20px 22px;
+}
+
+.setting-fields {
+  display: grid;
+  width: min(100%, 420px);
+  gap: 27px;
+}
+
+.setting-field {
+  display: grid;
+  gap: 9px;
+}
+
+.setting-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #50565c;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.help-icon {
+  display: inline-flex;
+  color: #727a82;
+  cursor: help;
+}
+
+.setting-input-wrap {
+  display: flex;
+  width: 194px;
+  height: 34px;
+  overflow: hidden;
+  border: 1px solid #dfe3e6;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 2px rgba(30, 45, 60, .03);
+}
+
+.setting-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  padding: 0 10px;
+  border: 0;
+  outline: 0;
+  color: #4b5158;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+}
+
+.setting-input-wrap input::placeholder {
+  color: #b0b5bb;
+}
+
+.input-suffix {
+  display: grid;
+  min-width: 43px;
+  place-items: center;
+  border-left: 1px solid #dfe3e6;
+  color: #767d84;
+  background: #edf0f3;
+  font-size: 12px;
+}
+
+.tab-placeholder {
+  padding: 10px 1px;
+  color: #7d838a;
+  font-size: 13px;
+}
+
+.tab-placeholder h2 {
+  margin: 0 0 8px;
+  color: #50565c;
+  font-size: 16px;
+}
+
+.telegram-page {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+.telegram-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.telegram-page-header h1 {
+  margin: 0;
+  color: #343a40;
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -.4px;
+}
+
+.telegram-eyebrow {
+  margin: 0 0 8px;
+  color: #6f7d93;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.telegram-subtitle {
+  margin: 8px 0 0;
+  color: #858b92;
+  font-size: 13px;
+}
+
+.telegram-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d3a24d;
+  box-shadow: 0 0 0 5px #f7efdf;
+}
+
+.telegram-status-dot.is-connected {
+  background: #4aa267;
+  box-shadow: 0 0 0 5px #e4f2e8;
+}
+
+.telegram-card {
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  border: 1px solid #edf0f4;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(32, 48, 73, .035);
+}
+
+.telegram-status-panel {
+  display: grid;
+  gap: 5px;
+  padding: 15px 17px;
+  border-radius: 8px;
+  color: #765627;
+  background: #fff5e5;
+  font-size: 13px;
+}
+
+.telegram-status-panel.is-connected {
+  color: #347b46;
+  background: #e9f5ec;
+}
+
+.telegram-status-panel span,
+.telegram-security-note p,
+.telegram-challenge small {
+  color: #777e86;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.telegram-form {
+  display: grid;
+  max-width: 470px;
+  gap: 16px;
+}
+
+.telegram-form label,
+.telegram-challenge label {
+  display: grid;
+  gap: 7px;
+  color: #50565c;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.telegram-form input,
+.telegram-challenge input {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid #dfe3e6;
+  border-radius: 7px;
+  outline: 0;
+  color: #343a40;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+.telegram-form input:focus,
+.telegram-challenge input:focus {
+  border-color: #4d79d5;
+  box-shadow: 0 0 0 3px rgba(77, 121, 213, .12);
+}
+
+.telegram-form input::placeholder {
+  color: #a4a9af;
+}
+
+.telegram-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  background: #4d79d5;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.telegram-button:hover:not(:disabled) {
+  background: #3e69c1;
+}
+
+.telegram-button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.telegram-button-secondary {
+  color: #3f5e91;
+  background: #eaf0fb;
+}
+
+.telegram-button-secondary:hover:not(:disabled) {
+  background: #dfe8f8;
+}
+
+.telegram-button-danger {
+  color: #a84f4a;
+  background: #fae9e7;
+}
+
+.telegram-button-danger:hover:not(:disabled) {
+  background: #f5dcd9;
+}
+
+.telegram-challenge {
+  display: grid;
+  max-width: 470px;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #edf0f4;
+}
+
+.telegram-session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.telegram-progress {
+  margin: 0;
+  color: #6f7d93;
+  font-size: 12px;
+}
+
+.telegram-error {
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 7px;
+  color: #a23d38;
+  background: #fcebea;
+  font-size: 12px;
+}
+
+.telegram-security-note {
+  padding-top: 18px;
+  border-top: 1px solid #edf0f4;
+}
+
+.telegram-security-note strong {
+  color: #50565c;
+  font-size: 12px;
+}
+
+.telegram-security-note p {
+  margin: 7px 0 0;
+}
+
+.telegram-accounts-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-bottom: 14px;
+  color: #777e86;
+  font-size: 13px;
+}
+
+.telegram-accounts-summary strong {
+  color: #343a40;
+  font-size: 20px;
+}
+
+.telegram-summary-connected {
+  margin-left: auto;
+  color: #4a8f5c;
+  font-size: 12px;
+}
+
+.telegram-account-list {
+  display: grid;
+  gap: 10px;
+}
+
+.telegram-account-card {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 17px;
+  border: 1px solid #edf0f4;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(32, 48, 73, .035);
+}
+
+.telegram-account-avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: #59647a;
+  background: #e9edf4;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.telegram-account-avatar.is-connected {
+  color: #347b46;
+  background: #e4f2e8;
+}
+
+.telegram-account-info {
+  display: grid;
+  min-width: 120px;
+  flex: 1;
+  gap: 5px;
+}
+
+.telegram-account-info strong {
+  overflow: hidden;
+  color: #343a40;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.telegram-account-info > span {
+  overflow: hidden;
+  color: #858b92;
+  font-size: 12px;
+  text-overflow: ellipsis;
+}
+
+.telegram-account-state {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  color: #97733b;
+  font-size: 12px;
+}
+
+.telegram-account-state i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d3a24d;
+}
+
+.telegram-account-state.is-connected {
+  color: #4a8f5c;
+}
+
+.telegram-account-state.is-connected i {
+  background: #4aa267;
+}
+
+.telegram-account-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.telegram-account-actions .telegram-button {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.telegram-form-card,
+.telegram-challenge-card {
+  margin-bottom: 14px;
+}
+
+.telegram-form-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.telegram-form-heading h2 {
+  margin: 0;
+  color: #343a40;
+  font-size: 16px;
+}
+
+.telegram-form-heading p {
+  margin: 6px 0 0;
+  color: #858b92;
+  font-size: 12px;
+}
+
+.telegram-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.telegram-form-hint {
+  color: #858b92;
+  font-size: 11px;
+}
+
+.telegram-text-button {
+  padding: 7px 4px;
+  border: 0;
+  color: #6f7d93;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.telegram-text-button:hover:not(:disabled) {
+  color: #3e69c1;
+}
+
+.telegram-text-button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.telegram-remove-button {
+  color: #a84f4a;
+}
+
+.telegram-challenge-card .telegram-challenge {
+  max-width: 470px;
+}
+
+.telegram-empty {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 42px 20px;
+  border: 1px dashed #dce2eb;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .7);
+  text-align: center;
+}
+
+.telegram-empty-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: #4d79d5;
+  background: #eaf0fb;
+  font-size: 24px;
+}
+
+.telegram-empty strong {
+  color: #343a40;
+  font-size: 14px;
+}
+
+.telegram-empty p {
+  margin: 0 0 7px;
+  color: #858b92;
+  font-size: 12px;
+}
+
+.notification-card {
+  gap: 20px;
+}
+
+.notification-form-toggle {
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.notification-form-toggle::after {
+  content: "+";
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.notification-form-toggle[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.notification-form-content {
+  display: grid;
+  gap: 20px;
+}
+
+.notification-account-picker-heading {
+  display: flex;
+  width: min(100%, 560px);
+  align-items: center;
+  justify-content: space-between;
+  color: #50565c;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.notification-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.notification-field {
+  display: grid;
+  width: min(100%, 560px);
+  gap: 8px;
+  color: #50565c;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.notification-field select,
+.notification-field textarea,
+.notification-field input {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid #dfe3e6;
+  border-radius: 7px;
+  outline: 0;
+  color: #343a40;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+.notification-field select {
+  min-height: 40px;
+}
+
+.notification-field input {
+  min-height: 40px;
+}
+
+.notification-field textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.notification-field select:focus,
+.notification-field textarea:focus,
+.notification-field input:focus {
+  border-color: #4d79d5;
+  box-shadow: 0 0 0 3px rgba(77, 121, 213, .12);
+}
+
+.notification-field small {
+  color: #858b92;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.notification-message-section {
+  display: grid;
+  justify-items: start;
+  gap: 13px;
+}
+
+.notification-section-label {
+  color: #50565c;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.notification-mode-switch {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 8px;
+  background: #f0f2f5;
+}
+
+.notification-mode-switch button {
+  min-height: 32px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 6px;
+  color: #6f7780;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.notification-mode-switch button.is-active {
+  color: #3f5e91;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(32, 48, 73, .12);
+}
+
+.notification-favorites-empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  color: #858b92;
+  font-size: 12px;
+}
+
+.notification-remove-favorite {
+  color: #a84f4a;
+}
+
+.notification-save-favorite {
+  min-height: 34px;
+}
+
+.notification-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.notification-actions > span {
+  color: #858b92;
+  font-size: 11px;
+}
+
+.notification-schedule {
+  display: flex;
+  width: min(100%, 720px);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #e8ebf0;
+  border-radius: 8px;
+  background: #f8f9fb;
+}
+
+.notification-schedule strong {
+  color: #50565c;
+  font-size: 12px;
+}
+
+.notification-interval-field {
+  margin-top: 10px;
+}
+
+.notification-schedule p {
+  margin: 5px 0 0;
+  color: #858b92;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.notification-schedules-card {
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px solid #edf0f4;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(32, 48, 73, .035);
+}
+
+.notification-schedules-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 17px 18px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.notification-schedules-heading h2 {
+  margin: 0;
+  color: #343a40;
+  font-size: 15px;
+}
+
+.notification-schedules-heading p,
+.notification-schedules-empty {
+  margin: 5px 0 0;
+  color: #858b92;
+  font-size: 12px;
+}
+
+.notification-schedules-heading > span {
+  display: grid;
+  min-width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 15px;
+  color: #3f5e91;
+  background: #eef3fb;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.notification-schedules-empty {
+  padding: 16px 18px;
+}
+
+.notification-schedules-table-wrap {
+  overflow-x: auto;
+}
+
+.notification-schedules-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.notification-schedules-table th,
+.notification-schedules-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #edf0f4;
+  color: #50565c;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.notification-schedules-table th {
+  color: #858b92;
+  background: #f8f9fb;
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.notification-schedules-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.notification-schedule-status {
+  display: inline-block;
+  color: #858b92;
+  font-weight: 650;
+}
+
+.notification-schedule-status.is-running {
+  color: #347b46;
+}
+
+.notification-schedule-meta,
+.notification-schedule-error {
+  display: block;
+  max-width: 260px;
+  margin-top: 4px;
+  color: #858b92;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.notification-schedule-error {
+  color: #a84f4a;
+}
+
+.notification-schedule-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.notification-success {
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 7px;
+  color: #347b46;
+  background: #e9f5ec;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .telegram-page-header h1 {
+    font-size: 23px;
+  }
+
+  .telegram-page-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .telegram-page-header .telegram-button {
+    min-width: 42px;
+    padding: 0 10px;
+    font-size: 0;
+  }
+
+  .telegram-page-header .telegram-button::first-letter {
+    font-size: 18px;
+  }
+
+  .telegram-card {
+    padding: 17px;
+  }
+
+  .telegram-account-card {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .telegram-account-info {
+    flex-basis: calc(100% - 60px);
+  }
+
+  .telegram-account-state {
+    margin-left: 52px;
+  }
+
+  .telegram-account-actions {
+    margin-left: auto;
+  }
+}
+
+.advanced-toggle {
+  display: flex;
+  width: 100%;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding: 0 20px;
+  color: #555b62;
+  font: inherit;
+  font-size: 19px;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+}
+
+.advanced-toggle svg {
+  transition: transform .18s ease;
+}
+
+.advanced-toggle .chevron-up {
+  transform: rotate(180deg);
+}
+
+.advanced-panel {
+  display: grid;
+  gap: 0;
+  margin-top: -10px;
+  margin-bottom: 22px;
+  padding: 0 20px;
+}
+
+.switch-setting {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #edf0f4;
+  color: #555b62;
+  font-size: 13px;
+}
+
+.switch-setting:last-child {
+  border-bottom: 0;
+}
+
+.switch-setting span {
+  display: grid;
+  gap: 5px;
+}
+
+.switch-setting small {
+  color: #9298a0;
+  font-size: 11px;
+}
+
+.switch-setting input {
+  width: 16px;
+  height: 16px;
+  accent-color: #4d79d5;
+}
+
+.save-bar {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 20px;
+}
+
+.announcement-panel {
+  display: grid;
+  gap: 20px;
+  min-height: 0;
+  padding: 22px;
+}
+
+.announcement-intro {
+  margin: 0;
+  color: #777e86;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.bot-status {
+  display: grid;
+  gap: 5px;
+  padding: 13px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.bot-status span,
+.announcement-field small {
+  color: #777e86;
+  font-size: 12px;
+}
+
+.bot-connected {
+  background: #e9f5ec;
+  color: #347b46;
+}
+
+.bot-disconnected {
+  background: #fff3e5;
+  color: #965c1d;
+}
+
+.announcement-form {
+  display: grid;
+  max-width: 700px;
+  gap: 20px;
+}
+
+.announcement-field {
+  display: grid;
+  gap: 8px;
+  color: #50565c;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.announcement-field input,
+.announcement-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dfe3e6;
+  border-radius: 8px;
+  color: #4b5158;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+.announcement-field textarea {
+  resize: vertical;
+}
+
+.announcement-field input:focus,
+.announcement-field textarea:focus {
+  border-color: #4d79d5;
+  outline: 2px solid rgba(77, 121, 213, .15);
+}
+
+.announcement-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.secondary-button {
+  min-height: 36px;
+  padding: 0 16px;
+  border: 1px solid #dfe3e6;
+  border-radius: 7px;
+  color: #50565c;
+  background: #f5f7fb;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: #e9edf4;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.schedule-details {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid #edf0f4;
+  padding-top: 16px;
+  color: #777e86;
+  font-size: 12px;
+}
+
+.schedule-details strong {
+  color: #50565c;
+}
+
+.api-error {
+  margin: 0;
+  color: #b33a32;
+  font-size: 13px;
+}
+
+.save-bar > span {
+  color: #8a9097;
+  font-size: 12px;
+}
+
+.primary-button {
+  min-height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  background: #4d79d5;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: #3e69c3;
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 238px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .main-content {
+    margin-left: 238px;
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    position: static;
+    width: auto;
+    max-height: 235px;
+    padding: 12px 14px;
+  }
+
+  .brand {
+    min-height: 38px;
+    margin-bottom: 8px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .brand-mark span {
+    font-size: 12px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-link {
+    width: auto;
+    min-height: 32px;
+    gap: 6px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .module-heading {
+    margin: 10px 0 5px;
+  }
+
+  .module-nav {
+    max-height: 76px;
+    overflow-y: auto;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 18px 13px 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .stat-card {
+    min-height: 74px;
+    padding: 10px 12px;
+  }
+
+  .stat-card-active {
+    padding: 9px 11px;
+  }
+
+  .stat-card strong {
+    font-size: 21px;
+  }
+
+  .table-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .accounts-table {
+    min-width: 1010px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .settings-tabs {
+    gap: 6px;
+    padding: 14px;
+  }
+
+  .soft-button {
+    padding: 0 9px;
+    font-size: 11px;
+  }
+
+  .settings-panel {
+    padding: 18px 14px;
+  }
+
+  .advanced-toggle {
+    min-height: 60px;
+    padding: 0 14px;
+    font-size: 16px;
+  }
+
+  .save-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px;
+  }
+}
+
+:root {
+  color-scheme: dark;
+  --theme-bg: #090b10;
+  --theme-sidebar: #0c0f15;
+  --theme-surface: #11151d;
+  --theme-surface-raised: #161b25;
+  --theme-surface-muted: #1b212c;
+  --theme-border: #272e3a;
+  --theme-border-strong: #343d4c;
+  --theme-text: #e7eaf0;
+  --theme-text-muted: #a0a8b7;
+  --theme-text-subtle: #778193;
+  --theme-accent: #7899f2;
+  --theme-accent-hover: #91aaff;
+  --theme-accent-soft: #1b2640;
+  --theme-success: #65c58b;
+  --theme-success-bg: #14281e;
+  --theme-warning: #e5b968;
+  --theme-warning-bg: #2a2113;
+  --theme-danger: #f08a86;
+  --theme-danger-bg: #321b1c;
+}
+
+body {
+  color: var(--theme-text);
+  background: var(--theme-bg);
+}
+
+.app-shell {
+  color: var(--theme-text);
+  background:
+    radial-gradient(ellipse at 74% -14%, rgba(71, 96, 165, .11), transparent 40%),
+    var(--theme-bg);
+}
+
+.sidebar {
+  border-right: 1px solid #1e2430;
+  color: var(--theme-text-muted);
+  background: linear-gradient(180deg, #0d1118, var(--theme-sidebar));
+}
+
+.brand-mark {
+  border-color: rgba(150, 174, 237, .42);
+  background: linear-gradient(145deg, #344b7d, #19243a 74%);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .13), 0 5px 13px rgba(0, 0, 0, .22);
+}
+
+.brand-name,
+.sidebar-link:hover:not(:disabled),
+.sidebar-link.is-active {
+  color: var(--theme-text);
+}
+
+.sidebar-link {
+  color: #929bac;
+}
+
+.sidebar-link:hover:not(:disabled),
+.sidebar-link.is-active {
+  background: #171d28;
+}
+
+.sidebar-link.is-active {
+  box-shadow: inset 2px 0 #7899f2;
+}
+
+.module-heading {
+  color: #d3d9e4;
+}
+
+.module-heading svg,
+.sidebar-link svg {
+  color: #8792a5;
+}
+
+.sidebar-cta {
+  border-color: #354668;
+  color: #dce5ff;
+  background: #151c29;
+}
+
+.sidebar-cta:hover {
+  background: #1b2638;
+}
+
+.main-content {
+  color: var(--theme-text);
+}
+
+.telegram-page-header h1,
+.page-title,
+.telegram-accounts-summary strong,
+.telegram-account-info strong,
+.telegram-form-heading h2,
+.telegram-empty strong,
+.notification-schedules-heading h2,
+.tab-placeholder h2 {
+  color: var(--theme-text);
+}
+
+.telegram-eyebrow,
+.telegram-subtitle,
+.telegram-progress,
+.telegram-account-info > span,
+.telegram-form-heading p,
+.telegram-form-hint,
+.telegram-security-note p,
+.telegram-challenge small,
+.tab-placeholder,
+.account-count,
+.telegram-accounts-summary {
+  color: var(--theme-text-muted);
+}
+
+.telegram-card,
+.telegram-account-card,
+.action-bar,
+.accounts-table-card,
+.panel,
+.settings-tabs,
+.settings-panel,
+.announcement-panel,
+.notification-schedules-card {
+  border-color: var(--theme-border);
+  background: linear-gradient(145deg, rgba(20, 25, 34, .98), rgba(15, 19, 27, .98));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .2);
+}
+
+.telegram-account-avatar {
+  color: #c5d2f3;
+  background: #202a3b;
+}
+
+.telegram-account-avatar.is-connected {
+  color: var(--theme-success);
+  background: var(--theme-success-bg);
+}
+
+.telegram-account-state {
+  color: var(--theme-warning);
+}
+
+.telegram-account-state.is-connected,
+.telegram-summary-connected {
+  color: var(--theme-success);
+}
+
+.telegram-button,
+.primary-button {
+  color: #f8faff;
+  background: #5578da;
+  box-shadow: 0 4px 12px rgba(46, 77, 156, .2);
+  transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+
+.telegram-button:hover:not(:disabled),
+.primary-button:hover:not(:disabled) {
+  background: #6989e8;
+  box-shadow: 0 6px 16px rgba(65, 98, 181, .28);
+  transform: translateY(-1px);
+}
+
+.telegram-button-secondary,
+.secondary-button {
+  border-color: var(--theme-border-strong);
+  color: #d4defa;
+  background: #202838;
+}
+
+.telegram-button-secondary:hover:not(:disabled),
+.secondary-button:hover:not(:disabled) {
+  background: #293449;
+}
+
+.telegram-button-danger,
+.telegram-remove-button {
+  color: var(--theme-danger);
+  background: var(--theme-danger-bg);
+}
+
+.telegram-text-button {
+  color: #aabcf3;
+}
+
+.telegram-text-button:hover:not(:disabled) {
+  color: var(--theme-accent-hover);
+}
+
+.telegram-form label,
+.telegram-challenge label,
+.notification-field,
+.announcement-field,
+.setting-label,
+.switch-setting {
+  color: #cbd1dc;
+}
+
+.telegram-form input,
+.telegram-challenge input,
+.notification-field select,
+.notification-field textarea,
+.notification-field input,
+.announcement-field input,
+.announcement-field textarea,
+.setting-input-wrap {
+  border-color: var(--theme-border-strong);
+  color: var(--theme-text);
+  background: #0d1118;
+}
+
+.telegram-form input::placeholder,
+.search-field input::placeholder,
+.notification-field textarea::placeholder {
+  color: #667184;
+}
+
+.telegram-form input:focus,
+.telegram-challenge input:focus,
+.notification-field select:focus,
+.notification-field textarea:focus,
+.notification-field input:focus,
+.announcement-field input:focus,
+.announcement-field textarea:focus,
+.search-field:focus-within {
+  border-color: #6f8fe7;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(111, 143, 231, .16);
+}
+
+.telegram-status-panel,
+.bot-status {
+  border: 1px solid #3c3323;
+  color: var(--theme-warning);
+  background: var(--theme-warning-bg);
+}
+
+.telegram-status-panel.is-connected,
+.bot-connected {
+  border-color: #244532;
+  color: var(--theme-success);
+  background: var(--theme-success-bg);
+}
+
+.telegram-error,
+.api-error {
+  border: 1px solid #563032;
+  color: var(--theme-danger);
+  background: var(--theme-danger-bg);
+}
+
+.telegram-security-note,
+.telegram-challenge,
+.schedule-details {
+  border-color: var(--theme-border);
+}
+
+.telegram-security-note strong,
+.schedule-details strong {
+  color: #d7dce6;
+}
+
+.telegram-empty {
+  border-color: #343d4b;
+  background: rgba(15, 19, 27, .65);
+}
+
+.telegram-empty-icon {
+  color: #a8bbfb;
+  background: var(--theme-accent-soft);
+}
+
+.telegram-empty p,
+.telegram-field small,
+.notification-field small,
+.notification-schedules-heading p,
+.notification-schedules-empty,
+.notification-schedule p,
+.notification-actions > span,
+.announcement-intro,
+.announcement-field small,
+.bot-status span,
+.save-bar > span,
+.switch-setting small {
+  color: var(--theme-text-subtle);
+}
+
+.notification-form-toggle {
+  background: linear-gradient(110deg, #5578da, #4869c7);
+}
+
+.notification-account-picker-heading,
+.notification-section-label,
+.notification-schedule strong {
+  color: #d7dce6;
+}
+
+.notification-mode-switch,
+.filter-control,
+.soft-button,
+.icon-button {
+  color: #c3cada;
+  background: #202631;
+}
+
+.notification-mode-switch button {
+  color: #a9b1bf;
+}
+
+.notification-mode-switch button.is-active,
+.soft-button-selected {
+  color: #e6ecff;
+  background: #30394b;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .28);
+}
+
+.notification-schedule,
+.notification-schedules-heading,
+.save-bar {
+  border-color: var(--theme-border);
+  background: #151a23;
+}
+
+.notification-schedules-heading {
+  border-bottom-color: var(--theme-border);
+}
+
+.notification-schedules-heading > span {
+  color: #d6e0ff;
+  background: var(--theme-accent-soft);
+}
+
+.notification-schedules-table th,
+.accounts-table th {
+  border-color: var(--theme-border);
+  color: #b7c0d0;
+  background: #1b212c;
+}
+
+.notification-schedules-table td,
+.accounts-table td {
+  border-color: #252c37;
+  color: #c6ccd7;
+}
+
+.notification-schedules-table tbody tr:hover,
+.accounts-table tbody tr:hover {
+  background: rgba(120, 153, 242, .055);
+}
+
+.notification-schedule-status.is-running,
+.status-pill {
+  color: var(--theme-success);
+  background: var(--theme-success-bg);
+}
+
+.notification-schedule-status {
+  color: #a5adba;
+}
+
+.notification-schedule-error {
+  color: var(--theme-danger);
+}
+
+.notification-success {
+  border: 1px solid #244532;
+  color: var(--theme-success);
+  background: var(--theme-success-bg);
+}
+
+.action-bar,
+.table-toolbar {
+  color: var(--theme-text-muted);
+}
+
+.search-field {
+  border-color: var(--theme-border-strong);
+  color: var(--theme-text-muted);
+  background: #0d1118;
+}
+
+.search-field input,
+.setting-input-wrap input {
+  color: var(--theme-text);
+}
+
+.accounts-table {
+  color: #c8ced9;
+}
+
+.accounts-table th,
+.accounts-table td {
+  border-bottom-color: #252c37;
+}
+
+.accounts-table th {
+  color: #bcc4d2;
+  background: #1b212c;
+}
+
+.row-number,
+.name-cell {
+  color: #c8ced9;
+}
+
+.row-actions button {
+  color: #a2adbf;
+}
+
+.row-actions button:hover,
+.row-actions button:last-child {
+  color: #91aaff;
+}
+
+.sort-hint {
+  color: #728099;
+}
+
+.status-frozen {
+  color: #87c6e4;
+  background: #172a35;
+}
+
+.status-blocked {
+  color: #f08a86;
+  background: #321b1c;
+}
+
+.input-suffix {
+  border-color: var(--theme-border-strong);
+  color: var(--theme-text-muted);
+  background: #1a202a;
+}
+
+.switch-setting {
+  border-bottom-color: var(--theme-border);
+}
+
+.bot-disconnected {
+  border: 1px solid #463520;
+  color: var(--theme-warning);
+  background: var(--theme-warning-bg);
+}
+
+.advanced-toggle {
+  color: #d7dce6;
+}
+
+.secondary-button {
+  border-color: var(--theme-border-strong);
+  color: #cbd1dc;
+}
+
+.telegram-status-dot {
+  background: var(--theme-warning);
+  box-shadow: 0 0 0 5px rgba(229, 185, 104, .12);
+}
+
+.telegram-status-dot.is-connected {
+  background: var(--theme-success);
+  box-shadow: 0 0 0 5px rgba(101, 197, 139, .12);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #8da7ff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #1e2430;
+  }
+
+  .telegram-page-header h1 {
+    color: var(--theme-text);
+  }
+}
+
+.activity-page {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.activity-refresh {
+  gap: 9px;
+}
+
+.activity-refresh span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.activity-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.activity-stat {
+  display: flex;
+  min-height: 98px;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--theme-border);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #151a24, #10141c);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .17);
+}
+
+.activity-stat-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid #35435e;
+  border-radius: 12px;
+  color: #a9bcff;
+  background: #1b2640;
+  font-size: 22px;
+}
+
+.activity-stat-icon.is-success {
+  border-color: #244532;
+  color: var(--theme-success);
+  background: var(--theme-success-bg);
+}
+
+.activity-stat-icon.is-error {
+  border-color: #563032;
+  color: var(--theme-danger);
+  background: var(--theme-danger-bg);
+}
+
+.activity-stat div {
+  display: grid;
+  gap: 5px;
+}
+
+.activity-stat strong {
+  color: var(--theme-text);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.activity-stat div span {
+  color: var(--theme-text-subtle);
+  font-size: 12px;
+}
+
+.activity-panel {
+  overflow: hidden;
+  border: 1px solid var(--theme-border);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(20, 25, 34, .98), rgba(15, 19, 27, .98));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .2);
+}
+
+.activity-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.activity-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.activity-filter {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--theme-text-muted);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.activity-filter:hover {
+  color: var(--theme-text);
+  background: #1a202a;
+}
+
+.activity-filter.is-active {
+  border-color: #34425e;
+  color: #dce5ff;
+  background: #1d2941;
+}
+
+.activity-search {
+  display: flex;
+  width: min(100%, 340px);
+  min-height: 38px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 11px;
+  border: 1px solid var(--theme-border-strong);
+  border-radius: 8px;
+  color: var(--theme-text-subtle);
+  background: #0c1017;
+}
+
+.activity-search:focus-within {
+  border-color: #6f8fe7;
+  box-shadow: 0 0 0 3px rgba(111, 143, 231, .14);
+}
+
+.activity-search-icon {
+  font-size: 20px;
+}
+
+.activity-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--theme-text);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+}
+
+.activity-search input::placeholder {
+  color: #687386;
+}
+
+.activity-search button {
+  border: 0;
+  color: var(--theme-text-subtle);
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.activity-list-heading,
+.activity-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(150px, .8fr) minmax(175px, auto);
+  align-items: center;
+  gap: 18px;
+}
+
+.activity-list-heading {
+  min-height: 42px;
+  padding: 0 20px 0 58px;
+  border-bottom: 1px solid var(--theme-border);
+  color: var(--theme-text-subtle);
+  background: #151a23;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .55px;
+  text-transform: uppercase;
+}
+
+.activity-entry {
+  position: relative;
+  min-height: 77px;
+  padding: 13px 20px 13px 58px;
+  border-bottom: 1px solid #232a35;
+  transition: background .15s ease;
+}
+
+.activity-entry:hover {
+  background: rgba(120, 153, 242, .045);
+}
+
+.activity-entry:last-child {
+  border-bottom: 0;
+}
+
+.activity-level-icon {
+  position: absolute;
+  left: 19px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid #35435e;
+  border-radius: 8px;
+  color: #a9bcff;
+  background: #1b2640;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.activity-level-icon.is-success {
+  border-color: #244532;
+  color: var(--theme-success);
+  background: var(--theme-success-bg);
+}
+
+.activity-level-icon.is-error {
+  border-color: #563032;
+  color: var(--theme-danger);
+  background: var(--theme-danger-bg);
+}
+
+.activity-entry-main,
+.activity-entry-context {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.activity-entry-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activity-entry-title strong {
+  overflow: hidden;
+  color: #dfe4ed;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+}
+
+.activity-entry-main > small,
+.activity-entry-context span {
+  overflow: hidden;
+  color: var(--theme-text-subtle);
+  font-size: 10px;
+  text-overflow: ellipsis;
+}
+
+.activity-entry-context strong {
+  overflow: hidden;
+  color: #c1cad8;
+  font-size: 11px;
+  font-weight: 550;
+  text-overflow: ellipsis;
+}
+
+.activity-entry-time {
+  color: #9aa4b4;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.activity-badge {
+  padding: 3px 7px;
+  border: 1px solid #374052;
+  border-radius: 20px;
+  color: #b6c0d0;
+  background: #202630;
+  font-size: 9px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.activity-badge.is-success {
+  border-color: #244532;
+  color: var(--theme-success);
+  background: var(--theme-success-bg);
+}
+
+.activity-badge.is-error {
+  border-color: #563032;
+  color: var(--theme-danger);
+  background: var(--theme-danger-bg);
+}
+
+.activity-empty {
+  display: grid;
+  min-height: 250px;
+  align-content: center;
+  justify-items: center;
+  gap: 9px;
+  padding: 24px;
+  text-align: center;
+}
+
+.activity-empty-icon,
+.activity-loading-mark {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #34425e;
+  border-radius: 13px;
+  color: #a9bcff;
+  background: #1b2640;
+  font-size: 25px;
+}
+
+.activity-loading-mark {
+  animation: activity-spin 1.1s linear infinite;
+}
+
+.activity-empty strong {
+  color: #dfe4ed;
+  font-size: 14px;
+}
+
+.activity-empty p {
+  max-width: 390px;
+  margin: 0;
+  color: var(--theme-text-subtle);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.activity-error {
+  margin: 14px 18px 0;
+  padding: 10px 12px;
+  border: 1px solid #563032;
+  border-radius: 7px;
+  color: var(--theme-danger);
+  background: var(--theme-danger-bg);
+  font-size: 12px;
+}
+
+.activity-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--theme-border);
+  color: var(--theme-text-subtle);
+  background: #10141b;
+  font-size: 10px;
+}
+
+.activity-privacy-note {
+  margin: 13px 2px 0;
+  color: var(--theme-text-subtle);
+  font-size: 11px;
+}
+
+@keyframes activity-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 780px) {
+  .activity-list-heading {
+    display: none;
+  }
+
+  .activity-entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 15px 16px 15px 54px;
+  }
+
+  .activity-level-icon {
+    left: 16px;
+    top: 16px;
+  }
+
+  .activity-entry-context {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .activity-entry-time {
+    color: var(--theme-text-subtle);
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .activity-page .telegram-page-header {
+    align-items: flex-start;
+  }
+
+  .activity-page .telegram-page-header .activity-refresh {
+    width: auto;
+    min-width: 40px;
+    padding: 0 10px;
+    font-size: 0;
+  }
+
+  .activity-page .telegram-page-header .activity-refresh span {
+    font-size: 19px;
+  }
+
+  .activity-stats {
+    gap: 8px;
+  }
+
+  .activity-stat {
+    min-height: 82px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .activity-stat-icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    border-radius: 9px;
+    font-size: 17px;
+  }
+
+  .activity-stat strong {
+    font-size: 20px;
+  }
+
+  .activity-stat div span {
+    font-size: 10px;
+  }
+
+  .activity-toolbar {
+    align-items: stretch;
+    padding: 12px;
+  }
+
+  .activity-filters {
+    gap: 3px;
+  }
+
+  .activity-filter {
+    min-height: 31px;
+    padding: 0 8px;
+    font-size: 10px;
+  }
+
+  .activity-search {
+    width: 100%;
+  }
+}
